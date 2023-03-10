@@ -1,0 +1,39 @@
+/*=====================*/
+/* HEADER*/
+/*=====================*/
+
+
+.header{
+    border: 2px solid red;
+    width: auto;
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    align-items:center;
+    background-color: rgb(16, 16, 16);
+    flex-wrap: wrap;
+}
+    
+#logo1{
+    padding-right: 200px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 2px solid red;;
+    
+}
+
+#logo2{
+    padding-left: 200px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 2px solid red;
+    
+}
+
+#menu{
+    color: rgb(191, 9, 9);
+}
+
+
+/*=====================*/
+/* BODY*/
+/*=====================*/
