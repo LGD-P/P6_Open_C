@@ -4,36 +4,56 @@
 
 
 .header{
-    border: 2px solid red;
+    border: 2px solid rgb(81, 10, 24);;
     width: auto;
     margin: 0px 0px 20px 0px;
     display: flex;
     align-items:center;
-    background-color: rgb(16, 16, 16);
+    background-color: black;
     flex-wrap: wrap;
 }
     
 #logo1{
     padding-right: 200px;
+    padding-left: 200px;
     margin-left: 20px;
     margin-top: 20px;
-    border: 2px solid red;;
+    border: 2px solid rgb(81, 10, 24);
     
 }
 
 #logo2{
     padding-left: 200px;
+    padding-right: 200px;
     margin-right: 20px;
+    margin-left: 20px;
     margin-top: 20px;
-    border: 2px solid red;
+    border: 2px solid rgb(81, 10, 24);;
     
 }
 
 #menu{
     color: rgb(191, 9, 9);
+    
 }
 
 
 /*=====================*/
 /* BODY*/
 /*=====================*/
+.body{
+    background-color: black;
+}
+.title{
+    color:red;
+    text-align: center;
+    border: 2px solid rgb(81, 10, 24);
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.video{
+    border: 2px solid rgb(81, 10, 24);
+    display: block;
+    margin: 0 auto;
+}
