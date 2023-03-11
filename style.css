@@ -3,37 +3,25 @@
 /*=====================*/
 
 
-.header{
+.header, .footer{
     border: 2px solid rgb(81, 10, 24);;
-    width: auto;
     margin: 0px 0px 20px 0px;
     display: flex;
-    align-items:center;
+    justify-content: space-evenly;
     background-color: black;
-    flex-wrap: wrap;
 }
     
-#logo1{
-    padding-right: 200px;
-    padding-left: 200px;
-    margin-left: 20px;
-    margin-top: 20px;
+#logo1, #logo2{
+
     border: 2px solid rgb(81, 10, 24);
     
 }
 
-#logo2{
-    padding-left: 200px;
-    padding-right: 200px;
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    border: 2px solid rgb(81, 10, 24);;
-    
-}
 
 #menu{
     color: rgb(191, 9, 9);
+    margin: auto 0 auto 0;
+    border: 2px solid rgb(81, 10, 24);
     
 }
 
@@ -42,6 +30,7 @@
 /* BODY*/
 /*=====================*/
 .body{
+    justify-content: space-evenly;
     background-color: black;
 }
 .title{
@@ -52,8 +41,64 @@
     font-family: sans-serif;
 }
 
+/*=====================*/
+/* PREVIEW/
+/*=====================*/
 .video{
     border: 2px solid rgb(81, 10, 24);
+    border-radius: 5px;
     display: block;
     margin: 0 auto;
+    height: 400px;
+    width: 600px;
 }
+
+
+/*=====================*/
+/* CARROUSSEL/
+/*=====================*/
+.carroussel{
+    display: flex;
+    justify-self: center;
+}
+
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* ces quelques lignes rendent */
+    align-items: center; /* responsive*/
+    max-width: 85%;
+    overflow-x: auto; /* créer la barre de défilement*/
+    overflow-wrap: normal;
+    -webkit-overflow-scrolling: touch; /* permet le scroll shit + roulette*/
+
+}
+
+/* we set each image in each section*/
+.thumbnail {
+    flex: 0 0 auto;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: scale(.95);
+    transition: 0.5s; /* grow duration*/
+}
+
+.thumbnail:hover
+{
+    transform: scale(1.08); /* grow size*/
+}
+
+
+.arrow{
+    width: 50px;
+    margin: auto;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;    
+}
+
