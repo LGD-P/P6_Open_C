@@ -5,6 +5,12 @@
 
 /* SCROLL LEFT */
 
+/**
+ * Get all arrow_left button 
+ * and move the closer .container attached 
+ * in right way
+ */
+
 document.querySelectorAll("button.arrow_left").forEach( buttonLeft => {
   buttonLeft.addEventListener("click", () => {
       let container = buttonLeft.nextElementSibling;
@@ -15,6 +21,15 @@ document.querySelectorAll("button.arrow_left").forEach( buttonLeft => {
 
 
 /* SCROLL RIGHT */
+
+/**
+ * Get all arrow_right button 
+ * and move the closer .container attached 
+ * in right way
+ */
+
+
+
 document.querySelectorAll("button.arrow_right").forEach( buttonRight => {
   buttonRight.addEventListener("click", () => {
       let container = buttonRight.previousElementSibling;
