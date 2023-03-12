@@ -1,17 +1,25 @@
-let container = document.querySelector(".container");
-let buttonLeft = document.querySelector(".arrow_left"); 
-let buttonRight = document.querySelector(".arrow_right");
+///SCROLLING ELEMENT ///
+
+////////////////////////////////////////////
+
+// We set variables from class and id we need
+
+let container = document.getElementById("img");
+
+// We set the button to use carroussel
+
+let buttonRight = document.getElementById("arrow_right");
+let buttonLeft = document.getElementById("arrow_left");
 
 
+// we creat two functions to aminate thumbnail from arrow button
 
-buttonLeft.onclick = () => {
-    container.scrollLeft -= 125;
-    console.log("click gauche");
-};
+buttonLeft.addEventListener("click", function () {
+  container.scrollLeft -= 125;
+  console.log("click gauche");
+});
 
-buttonRight.onclick = () => {
-    container.scrollLeft += 125;
-    console.log("click droit");
-};
-
-
+buttonRight.addEventListener("click", function () {
+ container.scrollLeft += 125;
+ console.log("click droit");
+});
