@@ -20,8 +20,15 @@
     display: flex;
 
   }
- 
 
+
+  .modal ul:hover,
+  .modal:focus {
+     color: rgb(255, 0, 0);
+     text-decoration: none;
+     cursor: pointer;
+  }
+ 
 .modalImage{
 border-radius: 40px;
 }
