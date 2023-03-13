@@ -12,3 +12,4 @@ Array.from(document.querySelectorAll(".imgThumbnail")).forEach(item => {
 document.querySelector(".close").addEventListener("click", () => {
    modal.style.display = "none";
 });
+

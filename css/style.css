@@ -30,7 +30,7 @@
 /* BODY*/
 /*=====================*/
 .body{
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: black;
 }
 .title{
@@ -41,19 +41,48 @@
     font-family: sans-serif;
 }
 
+.menu{
+    margin-top: 25px;
+}
+
 /*=====================*/
-/* PREVIEW/
+/* BEST MOVIE/
 /*=====================*/
-.video{
-    border: 2px solid rgb(81, 10, 24);
+.best-movie{
     border-radius: 5px;
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     height: 400px;
     width: 600px;
 }
 
+p{
+    color: whitesmoke;
+    text-align: center;
+    
+    font-weight: bold;   
+}
+p:hover{
+    color: red;
+}
 
+
+.best-movie-button{
+    color: red;
+    background-color: rgb(20, 17, 17);
+    font-weight: bold; 
+    border-radius: 5px;
+}
+
+.div-button{
+    display: flex;
+    justify-content: center;
+}
+.best-movie-button:hover{
+    color: whitesmoke;
+    transition-duration: 1s;
+}
 /*=====================*/
 /* CARROUSSEL/
 /*=====================*/
@@ -70,7 +99,6 @@
     display: flex;
     justify-content: center; /* ces quelques lignes rendent */
     align-items: center; /* responsive*/
-    max-width: 85%;
     overflow-x: auto; /* créer la barre de défilement*/
     overflow-wrap: normal;
     -webkit-overflow-scrolling: touch; /* permet le scroll shit + roulette*/
