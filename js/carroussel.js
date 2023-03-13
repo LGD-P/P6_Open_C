@@ -13,7 +13,7 @@
 
 document.querySelectorAll("button.arrow_left").forEach( buttonLeft => {
   buttonLeft.addEventListener("click", () => {
-      let container = buttonLeft.nextElementSibling;
+      const container = buttonLeft.nextElementSibling;
       container.scrollLeft -=125;
   });    
 });
@@ -32,7 +32,9 @@ document.querySelectorAll("button.arrow_left").forEach( buttonLeft => {
 
 document.querySelectorAll("button.arrow_right").forEach( buttonRight => {
   buttonRight.addEventListener("click", () => {
-      let container = buttonRight.previousElementSibling;
+      const container = buttonRight.previousElementSibling;
       container.scrollLeft += 125;
   });    
 });
+
+
