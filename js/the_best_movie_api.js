@@ -72,6 +72,7 @@ async function getBestMovieDataInArray (){
     dataArray.push(
       toJson.image_url,
       toJson.title,
+      toJson.genres[0],
       toJson.description,
       toJson.year,
       toJson.votes,
@@ -83,12 +84,9 @@ async function getBestMovieDataInArray (){
       toJson.worldwide_gross_incom
     );
     dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
+    console.log(dataArray)
     return dataArray;
   };
-
-
-getBestMovieDataInArray ();
-
 
 
   const bestMovieResume = document.querySelector(".best-movie-remuse")
@@ -100,9 +98,60 @@ getBestMovieDataInArray ();
 
 async function displayBestMovieResume (resume) {
     const reponse = await getBestMovieDataInArray ();
-    const answer = reponse[2];
+    const answer = reponse[3];
     resume.replaceChildren(answer);
 };
 
 
 displayBestMovieResume(bestMovieResume);
+
+
+
+
+const getTitle = document.getElementById('Title');
+const getGenre = document.getElementById('Genre');
+const getDate = document.getElementById('Date');
+const getRated= document.getElementById('Rated');
+const getScore = document.getElementById('Score_Imdb');
+const getMaker = document.getElementById('Maker');
+const getActors = document.getElementById('Actors');
+const getDuration = document.getElementById('Duration');
+const getCountry= document.getElementById('Country');
+const getboxOffice = document.getElementById('Box_Office');
+const getSynopsis = document.getElementById('Synopsis');
+
+
+
+
+
+/*
+* This function will fill best-movie modal with 
+* data if best-movie
+*/
+async function fillModalWithBestMovieData () {
+    const reponses = await getBestMovieDataInArray ();
+    const title = reponses[1];
+    getTitle.replaceChildren("Titre : ----------------------- > ",title);
+    const genre = reponses[2];
+    getGenre.replaceChildren("Genre : --------------------- > ", genre);
+    const date = reponses[4];
+    getDate.replaceChildren("Date : ----------------------- > ", date);
+    const rated = reponses[5];
+    getRated.replaceChildren("Classement : ------------- > ", rated);
+    const score = reponses[6];
+    getScore.replaceChildren('Score : --------------------- > ', score);
+    const maker = reponses[7];
+    getMaker.replaceChildren("Réalisateur : -------------- > ", maker);
+    const actors = reponses[8];
+    getActors.replaceChildren("Acteurs : ------------------- >", actors);
+    const duration = reponses[9];
+    getDuration.replaceChildren("Durée : ------------------- > ", duration,'min');
+    const countries = reponses[10];
+    getCountry.replaceChildren("Pays d'Origine : ---------- >", countries);
+    const boxOffice = reponses[11];
+    getboxOffice.replaceChildren("Entrée au Box Office : -- > ", boxOffice);
+    const resume = reponses[3];
+    getSynopsis.replaceChildren("Résumé : ------------------- > ", resume);
+};
+
+fillModalWithBestMovieData ();

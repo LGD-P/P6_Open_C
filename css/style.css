@@ -4,7 +4,7 @@
 
 
 .header, .footer{
-    border: 2px solid rgb(81, 10, 24);;
+    /*border: 2px solid rgb(81, 10, 24);*/
     margin: 0px 0px 20px 0px;
     display: flex;
     justify-content: space-evenly;
@@ -13,7 +13,7 @@
     
 #logo1, #logo2{
 
-    border: 2px solid rgb(81, 10, 24);
+    /*border: 2px solid rgb(81, 10, 24);*/
     
 }
 
@@ -21,7 +21,7 @@
 #menu{
     color: rgb(191, 9, 9);
     margin: auto 0 auto 0;
-    border: 2px solid rgb(81, 10, 24);
+    /*border: 2px solid rgb(81, 10, 24);*/
     
 }
 
@@ -36,7 +36,7 @@
 .title{
     color:red;
     text-align: center;
-    border: 2px solid rgb(81, 10, 24);
+    /*border: 2px solid rgb(81, 10, 24);*/
     font-size: 18px;
     font-family: sans-serif;
 }
@@ -60,7 +60,7 @@
 p{
     color: whitesmoke;
     text-align: center;
-    transition-duration: 10s;
+    transition-duration: 20s;
     font-weight: bold;  
     font-style: italic; 
 }
