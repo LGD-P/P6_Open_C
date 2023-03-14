@@ -61,7 +61,8 @@ p{
     color: whitesmoke;
     text-align: center;
     transition-duration: 10s;
-    font-weight: bold;   
+    font-weight: bold;  
+    font-style: italic; 
 }
 p:hover{
     color: red;

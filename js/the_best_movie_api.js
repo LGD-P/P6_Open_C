@@ -101,8 +101,7 @@ getBestMovieDataInArray ();
 async function displayBestMovieResume (resume) {
     const reponse = await getBestMovieDataInArray ();
     const answer = reponse[2];
-    console.log(answer);
-    return resume.replaceChildren(answer);
+    resume.replaceChildren(answer);
 };
 
 
