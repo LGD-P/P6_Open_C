@@ -1,3 +1,4 @@
+
 const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
 const img = document.querySelector(".best-movie")
@@ -11,8 +12,8 @@ fetch(best_movie_alone)
 
 /*
 fetch(best_movie_alone)
-.then(res => res.json())    
-.then(test => title.replaceChildren(test.results[0].title))
+    .then(res => res.json())        
+    .then(test => title.replaceChildren(test.results[0].title))
 */
 
 /*
@@ -81,9 +82,8 @@ async function getBestMovieDataInArray (){
       toJson.worldwide_gross_incom
     );
     dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
-    console.log(dataArray)
+    console.log(dataArray);
     return dataArray;
   };
 
 
-getBestMovieDataInArray();
