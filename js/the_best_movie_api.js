@@ -19,26 +19,71 @@ fetch(best_movie_alone)
 *This function replace best movie img in main page 
 */
 
-async function display_best_movie_img (img) {
+async function displayBestMovieImg (img) {
     const reponse = await fetch(best_movie_alone);
     const json = await reponse.json();
     const data = await json.results[0].image_url ;
     return img.src = data;
 };
-    
-display_best_movie_img(img);
+
+displayBestMovieImg (img);
 
 
 /*
 *This function put best movie title in main page 
 */
 
-async function display_best_movie_title (title) {
+async function displayBestMovieTitle (title) {
     const reponse = await fetch(best_movie_alone);
     const json = await reponse.json();
     const data = await json.results[0].title;
     return title.replaceChildren(data);
 };
 
-display_best_movie_title(title);
+displayBestMovieTitle(title);
 
+
+
+/*
+* This function get obly the best movie url
+*/
+
+async function getBestMovieUrl () {
+    const reponse = await fetch(best_movie_alone);
+    const json = await reponse.json();
+    const url = await json.results[0].url;
+    return url;
+    
+
+};
+
+
+/*
+* This function get all datas from the best
+* movie to be displayed in modal
+*/
+
+async function getBestMovieDataInArray (){
+    const url = await getBestMovieUrl ();
+    const fetchUrl = await fetch(url);
+    const toJson = await fetchUrl.json();
+    const dataArray = [];
+    dataArray.push(
+      toJson.image_url,
+      toJson.title,
+      toJson.year,
+      toJson.votes,
+      toJson.imdb_score,
+      toJson.directors[0],
+      toJson.actors,
+      toJson.duration,
+      toJson.countries[0],
+      toJson.worldwide_gross_incom
+    );
+    dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
+    console.log(dataArray)
+    return dataArray;
+  };
+
+
+getBestMovieDataInArray();
