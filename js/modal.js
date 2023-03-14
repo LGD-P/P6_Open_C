@@ -3,6 +3,7 @@ const modal = document.querySelector(".modal");
 const modalImage = document.querySelector(".modalImage");
 
 
+
 /*
 * This function open modal when click on image 
 * Except for the best movie.

@@ -72,6 +72,7 @@ async function getBestMovieDataInArray (){
     dataArray.push(
       toJson.image_url,
       toJson.title,
+      toJson.description,
       toJson.year,
       toJson.votes,
       toJson.imdb_score,
@@ -82,8 +83,27 @@ async function getBestMovieDataInArray (){
       toJson.worldwide_gross_incom
     );
     dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
-    console.log(dataArray);
     return dataArray;
   };
 
 
+getBestMovieDataInArray ();
+
+
+
+  const bestMovieResume = document.querySelector(".best-movie-remuse")
+
+
+/*
+*This function put best movie resume in main page 
+*/
+
+async function displayBestMovieResume (resume) {
+    const reponse = await getBestMovieDataInArray ();
+    const answer = reponse[2];
+    console.log(answer);
+    return resume.replaceChildren(answer);
+};
+
+
+displayBestMovieResume(bestMovieResume);

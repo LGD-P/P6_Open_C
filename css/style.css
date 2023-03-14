@@ -60,19 +60,26 @@
 p{
     color: whitesmoke;
     text-align: center;
-    
+    transition-duration: 10s;
     font-weight: bold;   
 }
 p:hover{
     color: red;
 }
 
-
 .best-movie-button{
     color: red;
     background-color: rgb(20, 17, 17);
     font-weight: bold; 
     border-radius: 5px;
+}
+
+
+.best-movie-resume{
+    color: whitesmoke;
+    background-color: rgb(20, 17, 17);
+    font-weight: bold; 
+    text-align: center;
 }
 
 .div-button{
