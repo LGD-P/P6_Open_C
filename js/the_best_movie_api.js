@@ -4,26 +4,12 @@ const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_sco
 const img = document.querySelector(".best-movie")
 const title = document.querySelector(".best-movie-title")
 
-/*
-fetch(best_movie_alone)
-    .then(res =>  {return res.json();})
-    .then(data =>  {img.src = data.results[0].image_url});
- */   
 
-/*
-fetch(best_movie_alone)
-    .then(res => res.json())        
-    .then(test => title.replaceChildren(test.results[0].title))
-*/
-
-/*
-*This function replace best movie img in main page 
-*/
 
 async function displayBestMovieImg (img) {
     const reponse = await fetch(best_movie_alone);
     const json = await reponse.json();
-    const data = await json.results[0].image_url ;
+    const data =  json.results[0].image_url ;
     return img.src = data;
 };
 
@@ -37,7 +23,7 @@ displayBestMovieImg (img);
 async function displayBestMovieTitle (title) {
     const reponse = await fetch(best_movie_alone);
     const json = await reponse.json();
-    const data = await json.results[0].title;
+    const data = json.results[0].title;
     return title.replaceChildren(data);
 };
 
@@ -52,10 +38,9 @@ displayBestMovieTitle(title);
 async function getBestMovieUrl () {
     const reponse = await fetch(best_movie_alone);
     const json = await reponse.json();
-    const url = await json.results[0].url;
+    const url = json.results[0].url;
     return url;
     
-
 };
 
 
@@ -131,27 +116,26 @@ const getSynopsis = document.getElementById('Synopsis');
 async function fillModalWithBestMovieData () {
     const reponses = await getBestMovieDataInArray ();
     const title = reponses[1];
-    getTitle.replaceChildren("Titre : ----------------------- > ",title);
+    getTitle.replaceChildren("Titre :  ",title);
     const genre = reponses[2];
-    getGenre.replaceChildren("Genre : --------------------- > ", genre);
+    getGenre.replaceChildren("Genre :  ", genre);
     const date = reponses[4];
-    getDate.replaceChildren("Date : ----------------------- > ", date);
+    getDate.replaceChildren("Date :  ", date);
     const rated = reponses[5];
-    getRated.replaceChildren("Classement : ------------- > ", rated);
+    getRated.replaceChildren("Classement :  ", rated);
     const score = reponses[6];
-    getScore.replaceChildren('Score : --------------------- > ', score);
+    getScore.replaceChildren('Score :  ', score);
     const maker = reponses[7];
-    getMaker.replaceChildren("Réalisateur : -------------- > ", maker);
+    getMaker.replaceChildren("Réalisateur :  ", maker);
     const actors = reponses[8];
-    getActors.replaceChildren("Acteurs : ------------------- >", actors);
+    getActors.replaceChildren("Acteurs : ", actors);
     const duration = reponses[9];
-    getDuration.replaceChildren("Durée : ------------------- > ", duration,'min');
+    getDuration.replaceChildren("Durée :  ", duration,'min');
     const countries = reponses[10];
-    getCountry.replaceChildren("Pays d'Origine : ---------- >", countries);
+    getCountry.replaceChildren("Pays d'Origine : ", countries);
     const boxOffice = reponses[11];
-    getboxOffice.replaceChildren("Entrée au Box Office : -- > ", boxOffice);
+    getboxOffice.replaceChildren("Entrée au Box Office :  ", boxOffice);
     const resume = reponses[3];
-    getSynopsis.replaceChildren("Résumé : ------------------- > ", resume);
+    getSynopsis.replaceChildren("Résumé :  ", resume);
 };
 
-fillModalWithBestMovieData ();
