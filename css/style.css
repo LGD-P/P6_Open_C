@@ -93,18 +93,15 @@ p:hover{
 .carroussel{
     display: flex;
     justify-self: center;
+    
 }
 
 
 .container{
-    margin: 0 auto;
     display: flex;
-    justify-content: center; /* ces quelques lignes rendent */
     align-items: center; /* responsive*/
-    overflow-x: auto; /* créer la barre de défilement*/
-    overflow-wrap: normal;
-    -webkit-overflow-scrolling: touch; /* permet le scroll shit + roulette*/
-
+    overflow-x:auto; /* créer la barre de défilement*/
+    
 }
 
 /* we set each image in each section*/

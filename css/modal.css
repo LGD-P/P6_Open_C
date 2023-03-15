@@ -6,6 +6,7 @@
     padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
+    bottom: 0;
     width: 96.5%; /* Full width */
     height: 96.5%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -19,6 +20,8 @@
     font-weight: 900;
     display: flex;
     max-width: 1000px;
+    margin-bottom: 10px;
+    
 
   }
 
@@ -41,6 +44,7 @@ height: 400px;
     justify-content: center;
     padding-top: 100px;
     padding-left: 50px;
+    padding-bottom: 50px;
         
     
 }
