@@ -1,6 +1,7 @@
 
  .modal {
-    display: none;
+    /*border: 2px solid rgb(81, 10, 24);*/
+    display: flex;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 50px; /* Location of the box */
@@ -17,37 +18,32 @@
 
  .modal ul{
     color: whitesmoke;
-    font-weight: 900;
-    display: flex;
+    font-weight: 800;
     max-width: 1000px;
     margin-bottom: 10px;
-    
-
   }
 
+.modal-element {
+display: inline-block;
+justify-items: center;
+padding-top: 80px;
+}
 
-  .modal ul:hover,
-  .modal:focus {
-     color: rgb(255, 0, 0);
-     text-decoration: none;
-     cursor: pointer;
-  }
+.modal ul:hover,
+.modal:focus {
+   color: rgb(255, 0, 0);
+   text-decoration: none;
+   cursor: pointer;
+}
  
 .modalImage{
 border-radius: 40px;
 width: 255px;
 height: 400px;
+margin-left: 0;
 }
 
-.modal-element{
-    display: inline-block;
-    justify-content: center;
-    padding-top: 100px;
-    padding-left: 50px;
-    padding-bottom: 50px;
-        
-    
-}
+
 
 .close {
     position: absolute;

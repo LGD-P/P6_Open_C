@@ -1,6 +1,7 @@
 
 const modal = document.querySelector(".modal");
 const modalImage = document.querySelector(".modalImage");
+const modalElement = document.querySelector(".list")
 
 
 
@@ -22,9 +23,10 @@ Array.from(document.querySelectorAll(".imgThumbnail")).forEach(item => {
 *  the best movie.
 */
 
-document.querySelector(".best-movie-button").addEventListener( "click", event => {
+document.querySelector(".best-movie-button").addEventListener( "click", () => {
    modal.style.display = "block";
    modalImage.src = document.querySelector("#best-movie").src;
+   modalElement = fillModalWithBestMovieData();
    
 });
 
