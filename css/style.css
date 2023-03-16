@@ -4,21 +4,28 @@
 
 
 .header, .footer{
-    /*border: 2px solid rgb(81, 10, 24);*/
-    margin: 0px 0px 20px 0px;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 0px 0px 0px 0px;
+    display:inline-flex;
     background-color: black;
 }
 
 
-#menu{
-    color: rgb(191, 9, 9);
-    margin: auto 0 auto 0;
-    /*border: 2px solid rgb(81, 10, 24);*/
-    
+
+
+.header-title{
+    color: red;
+    margin-left: 50px;
 }
 
+.menu-accueil-link{
+    margin: auto 0 auto 0;
+    margin-left: 350px;
+}
+
+.menu-categorie-link{
+    margin: auto 0 auto 0;
+    margin-left: 100px;
+}
 
 /*=====================*/
 /* BODY*/
@@ -92,6 +99,7 @@ p:hover{
 
 .carroussel{
     display: flex;
+    justify-content: center;
     justify-self: center;
     
 }
@@ -100,6 +108,7 @@ p:hover{
 .container{
     display: flex;
     align-items: center; /* responsive*/
+    max-width: 1110px;
     overflow-x:auto; /* créer la barre de défilement*/
     
 }
