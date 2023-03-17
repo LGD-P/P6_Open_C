@@ -26,7 +26,7 @@
 .modal-element {
 display: inline-block;
 justify-items: center;
-padding-top: 80px;
+
 }
 
 .modal ul:hover,
@@ -41,6 +41,7 @@ border-radius: 40px;
 width: 255px;
 height: 400px;
 margin-left: 0;
+padding-bottom: 60px;
 }
 
 
@@ -61,3 +62,23 @@ margin-left: 0;
     text-decoration: none;
     cursor: pointer;
  }
+
+
+
+table {
+   width: 900px;
+   color: red;
+   
+}
+
+
+table, tr, th{
+   padding: 20px;
+   text-align: left;
+   border-spacing: 0 15px;
+}
+
+td:nth-child(2n){
+   width: 600px;
+   padding-left: 20px;
+}
