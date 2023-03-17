@@ -16,12 +16,7 @@
  }
 
 
- .modal ul{
-    color: whitesmoke;
-    font-weight: 800;
-    max-width: 1000px;
-    margin-bottom: 10px;
-  }
+
 
 .modal-element {
 display: inline-block;
@@ -29,11 +24,12 @@ justify-items: center;
 
 }
 
-.modal ul:hover,
-.modal:focus {
-   color: rgb(255, 0, 0);
-   text-decoration: none;
+tr:hover,
+tr:focus {
+   color: whitesmoke;
    cursor: pointer;
+   transform: scale(1.05);
+   transition: 0.5s; /* grow duration*/
 }
  
 .modalImage{
@@ -80,5 +76,11 @@ table, tr, th{
 
 td:nth-child(2n){
    width: 600px;
-   padding-left: 20px;
+   padding-left: 50px;
+   text-align: left;
+}
+
+
+td:nth-child(1n){
+   padding-left: 10px;
 }
