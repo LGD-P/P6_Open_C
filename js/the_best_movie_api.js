@@ -1,7 +1,7 @@
 
 const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
-const img = document.querySelector(".best-movie")
+const img = document.querySelector(".best-movie-img")
 const title = document.querySelector(".best-movie-title")
 
 

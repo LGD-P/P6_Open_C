@@ -9,9 +9,6 @@
     background-color: black;
 }
 
-
-
-
 .header-title{
     color: red;
     margin-left: 50px;
@@ -49,49 +46,62 @@
 /*=====================*/
 /* BEST MOVIE/
 /*=====================*/
-.best-movie{
-    border-radius: 5px;
+
+.best-movie-container{
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    height: 350px;
-    width: 250px;
+    position: relative;
+    box-sizing: content-box;
+    
 }
 
-p{
-    color: whitesmoke;
-    text-align: center;
-    transition-duration: 20s;
-    font-weight: bold;  
-    font-style: italic; 
+.best-movie-img{
+    width: 400px;
 }
-p:hover{
+
+.best-movie-title{
+    position: absolute;
     color: red;
+    background-color: black;
+    opacity: 0.9;
+    font-size: large;
+    font-weight: bold;
+    top: 35px;
+    
 }
 
 .best-movie-button{
+    position: absolute;
+    top: 380px;
     color: red;
-    background-color: rgb(20, 17, 17);
+    background-color: black;
+    opacity: 0.8;
     font-weight: bold; 
+    font-size: large;
     border-radius: 5px;
 }
 
-
-.best-movie-resume{
-    color: whitesmoke;
-    background-color: rgb(20, 17, 17);
-    font-weight: bold; 
-    text-align: center;
-}
-
-.div-button{
-    display: flex;
-    justify-content: center;
-}
 .best-movie-button:hover{
     color: whitesmoke;
     transition-duration: 1s;
 }
+
+.best-movie-remuse{
+    position: absolute;
+    color: red;
+    background-color: black;
+    opacity: 0.7;
+    font-size: medium;
+    font-weight: bold;
+    top: 400px;
+    max-width: 350px;
+}
+
+p:hover{
+    color: whitesmoke;
+    transition-duration: 1s;
+}
+
 /*=====================*/
 /* CARROUSSEL/
 /*=====================*/
@@ -100,8 +110,7 @@ p:hover{
 .carroussel{
     display: flex;
     justify-content: center;
-    justify-self: center;
-    
+    justify-self: center;  
 }
 
 
