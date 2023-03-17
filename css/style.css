@@ -2,27 +2,46 @@
 /* HEADER*/
 /*=====================*/
 
+.header{
+    border: 2px solid rgb(81, 10, 24);
+    width: 80%;
+    margin: auto;
+    line-height: 66px;
+    height: 75px;
+}
+.h-left{
+    color: red;
+    float: left;
+}
 
-.header, .footer{
-    margin: 0px 0px 0px 0px;
-    display:inline-flex;
-    background-color: black;
+.h-right{
+    float: right;
+    margin-right: 80px;
 }
 
 .header-title{
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link{
+    margin: 0 50px;
+    font-weight: bold;
+}
+
+
+a:link{
     color: red;
-    margin-left: 50px;
 }
 
-.menu-accueil-link{
-    margin: auto 0 auto 0;
-    margin-left: 350px;
+
+@media only screen and (max-width:880px) {
+    .h-right{
+        display: none;
+    }
+    
 }
 
-.menu-categorie-link{
-    margin: auto 0 auto 0;
-    margin-left: 100px;
-}
 
 /*=====================*/
 /* BODY*/
@@ -33,10 +52,12 @@
 }
 .title{
     color:red;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    /*border: 2px solid rgb(81, 10, 24);*/
     font-size: 18px;
     font-family: sans-serif;
+    padding-top: 30px;
 }
 
 .menu{
@@ -51,12 +72,13 @@
     display: flex;
     justify-content: center;
     position: relative;
-    box-sizing: content-box;
+    /*border: 2px solid rgb(81, 10, 24);*/
     
 }
 
 .best-movie-img{
     width: 400px;
+    border-radius: 10px;
 }
 
 .best-movie-title{
@@ -74,17 +96,14 @@
     position: absolute;
     top: 380px;
     color: red;
-    background-color: black;
-    opacity: 0.8;
+    background-color:rgba(255, 255, 255, 0.849);
+    opacity: 0.9;
     font-weight: bold; 
     font-size: large;
     border-radius: 5px;
 }
 
-.best-movie-button:hover{
-    color: whitesmoke;
-    transition-duration: 1s;
-}
+
 
 .best-movie-remuse{
     position: absolute;
@@ -97,8 +116,13 @@
     max-width: 350px;
 }
 
+.best-movie-button:hover{
+    color: black;
+    transition-duration: 1s;
+}
+
 p:hover{
-    color: whitesmoke;
+    color:white;
     transition-duration: 1s;
 }
 
