@@ -3,20 +3,22 @@
 /*=====================*/
 
 .header{
-    /*border: 2px solid rgb(81, 10, 24);*/
-    width: 80%;
-    margin: auto;
+    background-color: rgb(29, 29, 31);
     line-height: 66px;
-    height: 75px;
+    height: 100px;
+    padding-top: 30px;
+    display: block;
+    
 }
 .h-left{
     color: red;
     float: left;
+    margin-left: 100px;
 }
 
 .h-right{
     float: right;
-    margin-right: 80px;
+    margin-right: 250px;
 }
 
 .header-title{
@@ -35,7 +37,7 @@ a:link{
 }
 
 
-@media only screen and (max-width:880px) {
+@media only screen and (max-width:955px) {
     .h-right{
         display: none;
     }
@@ -47,6 +49,7 @@ a:link{
 /* BODY*/
 /*=====================*/
 .body{
+    margin: 0px 0px 0px 0px ;
     justify-content: center;
     background-color: black;
 }
@@ -78,7 +81,6 @@ a:link{
 
 .best-movie-img{
     width: 400px;
-    border-radius: 10px;
 }
 
 .best-movie-title{
