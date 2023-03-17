@@ -4,11 +4,20 @@ const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_sco
 const img = document.querySelector(".best-movie-img")
 const title = document.querySelector(".best-movie-title")
 
+/*
+* This function fetch a url and 
+* get json back as answer
+*/
+async function getJson (url) {
+    const reponse = await fetch(url);
+    const json = await reponse.json();
+    return json
+};
+
 
 
 async function displayBestMovieImg (img) {
-    const reponse = await fetch(best_movie_alone);
-    const json = await reponse.json();
+    const json = await getJson(best_movie_alone);
     const data =  json.results[0].image_url ;
     return img.src = data;
 };
@@ -21,8 +30,7 @@ displayBestMovieImg (img);
 */
 
 async function displayBestMovieTitle (title) {
-    const reponse = await fetch(best_movie_alone);
-    const json = await reponse.json();
+    const json = await getJson(best_movie_alone);
     const data = json.results[0].title;
     return title.replaceChildren(data);
 };
@@ -36,8 +44,7 @@ displayBestMovieTitle(title);
 */
 
 async function getBestMovieUrl () {
-    const reponse = await fetch(best_movie_alone);
-    const json = await reponse.json();
+    const json = await getJson(best_movie_alone);
     const url = json.results[0].url;
     return url;
     
