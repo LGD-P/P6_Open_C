@@ -86,11 +86,12 @@ a:link{
 .best-movie-title{
     position: absolute;
     color: red;
-    background-color: black;
+    background-color: rgb(168, 168, 168);
     opacity: 0.9;
     font-size: large;
     font-weight: bold;
     top: 35px;
+    border-radius: 5px;
     
 }
 
@@ -110,12 +111,13 @@ a:link{
 .best-movie-remuse{
     position: absolute;
     color: red;
-    background-color: black;
+    background-color: rgb(168, 168, 168);
     opacity: 0.7;
     font-size: medium;
     font-weight: bold;
     top: 400px;
     max-width: 350px;
+    border-radius: 5px;
 }
 
 .best-movie-button:hover{
@@ -124,7 +126,7 @@ a:link{
 }
 
 p:hover{
-    color:white;
+    color:rgb(0, 0, 0);
     transition-duration: 1s;
 }
 

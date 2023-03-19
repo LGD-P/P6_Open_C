@@ -4,6 +4,11 @@ const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_sco
 const img = document.querySelector(".best-movie-img")
 const title = document.querySelector(".best-movie-title")
 
+
+
+
+
+
 /*
 * This function fetch a url and 
 * get json back as answer
@@ -76,7 +81,7 @@ async function getBestMovieDataInArray (){
       toJson.worldwide_gross_incom
     );
     dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
-    console.log(dataArray)
+    /*console.log(dataArray)*/
     return dataArray;
   };
 
@@ -122,6 +127,7 @@ const getSynopsis = document.getElementById('Synopsis-R');
 */
 async function fillModalWithBestMovieData () {
     const reponses = await getBestMovieDataInArray ();
+    console.log(reponses);
     const title = reponses[1];
     getTitle.replaceChildren(title);
     const genre = reponses[2];
@@ -135,7 +141,7 @@ async function fillModalWithBestMovieData () {
     const maker = reponses[7];
     getMaker.replaceChildren(maker);
     const actors = reponses[8];
-    getActors.replaceChildren(actors);
+    getActors.replaceChildren(actors.join(" - "));
     const duration = reponses[9];
     getDuration.replaceChildren(duration,'min');
     const countries = reponses[10];
