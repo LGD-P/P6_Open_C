@@ -131,11 +131,11 @@ p:hover{
 }
 
 /*=====================*/
-/* CARROUSSEL/
+/* CAROUSSEL/
 /*=====================*/
 
 
-.carroussel{
+.caroussel{
     display: flex;
     justify-content: center;
     justify-self: center;  

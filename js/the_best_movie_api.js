@@ -45,7 +45,7 @@ displayBestMovieTitle(title);
 
 
 /*
-* This function get obly the best movie url
+* This function get only the best movie url
 */
 
 async function getBestMovieUrl () {
@@ -127,7 +127,6 @@ const getSynopsis = document.getElementById('Synopsis-R');
 */
 async function fillModalWithBestMovieData () {
     const reponses = await getBestMovieDataInArray ();
-    console.log(reponses);
     const title = reponses[1];
     getTitle.replaceChildren(title);
     const genre = reponses[2];
@@ -151,4 +150,10 @@ async function fillModalWithBestMovieData () {
     const resume = reponses[3];
     getSynopsis.replaceChildren(resume);
 };
+
+
+
+
+
+
 
