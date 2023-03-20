@@ -142,7 +142,7 @@ p:hover{
 }
 
 
-.container{
+.container0, .container1, .container2, .container3{
     display: flex;
     align-items: center; /* responsive*/
     max-width: 1110px;
@@ -151,18 +151,20 @@ p:hover{
 }
 
 /* we set each image in each section*/
-.thumbnail {
+.imgThumbnail {
     flex: 0 0 auto;
     object-fit: cover;
     cursor: pointer;
     margin: 5px;
     border-radius: 5px;
     overflow: hidden;
+    width: 266px;
+    height: 400px;
     transform: scale(.95);
     transition: 0.5s; /* grow duration*/
 }
 
-.thumbnail:hover
+.imgThumbnail:hover
 {
     transform: scale(1.08); /* grow size*/
 }

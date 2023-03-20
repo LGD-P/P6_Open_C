@@ -8,14 +8,18 @@ const modalElement = document.querySelector(".list")
 /*
 * This function open modal when click on image 
 * Except for the best movie.
+* querySelector is on parent because of dynamic creation
 */
 
-Array.from(document.querySelectorAll(".imgThumbnail")).forEach(item => {
+
+Array.from(document.querySelectorAll(".container")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
    });
 });
+
+
 
 
 /*
