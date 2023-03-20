@@ -16,9 +16,46 @@ Array.from(document.querySelectorAll(".container")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
+      
    });
 });
 
+Array.from(document.querySelectorAll(".container0")).forEach(item => {
+   item.addEventListener("click", event => {
+      modal.style.display = "block";
+      modalImage.src = event.target.src;
+      modalElement = fillModalWithBestMovieData(bestEverUrl);
+      
+   });
+});
+
+Array.from(document.querySelectorAll(".container1")).forEach(item => {
+   item.addEventListener("click", event => {
+      modal.style.display = "block";
+      modalImage.src = event.target.src;
+      modalElement = fillModalWithBestMovieData(historyUrl);
+      
+   });
+});
+
+
+Array.from(document.querySelectorAll(".container2")).forEach(item => {
+   item.addEventListener("click", event => {
+      modal.style.display = "block";
+      modalImage.src = event.target.src;
+      modalElement = fillModalWithBestMovieData(sciFyUrl);
+      
+   });
+});
+
+Array.from(document.querySelectorAll(".container3")).forEach(item => {
+   item.addEventListener("click", event => {
+      modal.style.display = "block";
+      modalImage.src = event.target.src;
+      modalElement = fillModalWithBestMovieData(crimeUrl);
+      
+   });
+});
 
 
 
@@ -29,9 +66,8 @@ Array.from(document.querySelectorAll(".container")).forEach(item => {
 
 document.querySelector(".best-movie-button").addEventListener( "click", () => {
    modal.style.display = "block";
-   modalImage.src = document.querySelector("#best-movie").src;
-   modalElement = fillModalWithBestMovieData();
-   
+   modalImage.src = document.querySelector("#best-movie").src
+   modalElement = fillModalWithBestMovieData(bestMovieAlone)
 });
 
 

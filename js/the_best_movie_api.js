@@ -1,5 +1,5 @@
 
-const best_movie_alone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
+const bestMovieAlone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
 const img = document.querySelector(".best-movie-img")
 const title = document.querySelector(".best-movie-title")
@@ -22,7 +22,7 @@ async function getJson (url) {
 
 
 async function displayBestMovieImg (img) {
-    const json = await getJson(best_movie_alone);
+    const json = await getJson(bestMovieAlone);
     const data =  json.results[0].image_url ;
     return img.src = data;
 };
@@ -35,7 +35,7 @@ displayBestMovieImg (img);
 */
 
 async function displayBestMovieTitle (title) {
-    const json = await getJson(best_movie_alone);
+    const json = await getJson(bestMovieAlone);
     const data = json.results[0].title;
     return title.replaceChildren(data);
 };
@@ -48,8 +48,8 @@ displayBestMovieTitle(title);
 * This function get only the best movie url
 */
 
-async function getBestMovieUrl () {
-    const json = await getJson(best_movie_alone);
+async function getBestMovieUrl (urlToFetch) {
+    const json = await getJson(urlToFetch);
     const url = json.results[0].url;
     return url;
     
@@ -61,15 +61,15 @@ async function getBestMovieUrl () {
 * movie to be displayed in modal
 */
 
-async function getBestMovieDataInArray (){
-    const url = await getBestMovieUrl ();
+async function getBestMovieDataInArray (urlToFetch){
+    const url = await getBestMovieUrl (urlToFetch);
     const fetchUrl = await fetch(url);
     const toJson = await fetchUrl.json();
     const dataArray = [];
     dataArray.push(
       toJson.image_url,
       toJson.title,
-      toJson.genres[0],
+      toJson.genres,
       toJson.description,
       toJson.year,
       toJson.votes,
@@ -94,7 +94,7 @@ async function getBestMovieDataInArray (){
 */
 
 async function displayBestMovieResume (resume) {
-    const reponse = await getBestMovieDataInArray ();
+    const reponse = await getBestMovieDataInArray (bestMovieAlone);
     const answer = reponse[3];
     resume.replaceChildren(answer);
 };
@@ -125,12 +125,13 @@ const getSynopsis = document.getElementById('Synopsis-R');
 * This function will fill best-movie modal with 
 * data if best-movie
 */
-async function fillModalWithBestMovieData () {
-    const reponses = await getBestMovieDataInArray ();
+async function fillModalWithBestMovieData (urlToFetch) {
+    const reponses = await getBestMovieDataInArray (urlToFetch);
+    console.log(reponses);
     const title = reponses[1];
     getTitle.replaceChildren(title);
     const genre = reponses[2];
-    getGenre.replaceChildren(genre);
+    getGenre.replaceChildren(genre.join(" - "));
     const date = reponses[4];
     getDate.replaceChildren(date);
     const rated = reponses[5];
@@ -149,9 +150,8 @@ async function fillModalWithBestMovieData () {
     getboxOffice.replaceChildren(boxOffice);
     const resume = reponses[3];
     getSynopsis.replaceChildren(resume);
+
 };
-
-
 
 
 

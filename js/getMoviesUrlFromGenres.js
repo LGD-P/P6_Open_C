@@ -39,7 +39,7 @@ async function sevenMoviesDatasByGenre (urlCategory) {
     const genre = await  getSevenUrls (urlCategory);
     for (let i =0 ; i< genre.length; i ++)
         allData.push(await getJson(genre[i]));
-    console.log(allData)
+    /*console.log(allData)*/
     
     
     const sortedData = []
@@ -67,10 +67,10 @@ async function sevenMoviesDatasByGenre (urlCategory) {
 
 /*
 * This function creat img in DOM from each
-* url movie  
+* url movies  
 */
 
-async function creatElementTest (containerNumber, genreUrl) {
+async function creatElementInCaroussel (containerNumber, genreUrl) {
     const data = await sevenMoviesDatasByGenre (genreUrl);
     
     for (let i =0 ; i< data.length; i ++) {
@@ -79,11 +79,19 @@ async function creatElementTest (containerNumber, genreUrl) {
         thumbnailDiv.classList.add("imgThumbnail");
         thumbnailDiv.src = data[i][0];    
         containerSelection.appendChild(thumbnailDiv);
+        
+        await fillModalWithBestMovieData (sciFyUrl);
+        /*await fillModalWithBestMovieData (crimeUrl);
+        await fillModalWithBestMovieData (bestEverUrl);
+        await fillModalWithBestMovieData (historyUrl);
+        */
+        
+        
     };
 
 };
 
-const test = creatElementTest(0,bestEverUrl);
-const test2 =  creatElementTest(1,historyUrl);
-const test3 = creatElementTest(2,sciFyUrl);
-const test4 = creatElementTest(3,crimeUrl);
+const categoryBest = creatElementInCaroussel(0,bestEverUrl);
+const categoryHistory = creatElementInCaroussel(1,historyUrl);
+const categorySciFy = creatElementInCaroussel(2,sciFyUrl);
+const categoryCrime = creatElementInCaroussel(3,crimeUrl);
