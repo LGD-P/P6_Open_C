@@ -1,4 +1,4 @@
-const bestEverUrl = "http://localhost:8000/api/v1/titles/?-imdb_score"
+const bestEverUrl = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 const historyUrl = "http://localhost:8000/api/v1/titles/?genre=history&sort_by=-imdb_score"
 const sciFyUrl = "http://localhost:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score"
 const crimeUrl = "http://localhost:8000/api/v1/titles/?genre=Crime&sort_by=-imdb_score"
@@ -31,7 +31,7 @@ async function getSevenUrls (genreUrl) {
 
 /*
 * This fuynction get in an array
-* All data from 7 movies
+* All data we need from each 7 movies
 */
 
 async function sevenMoviesDatasByGenre (urlCategory) {
@@ -40,8 +40,29 @@ async function sevenMoviesDatasByGenre (urlCategory) {
     for (let i =0 ; i< genre.length; i ++)
         allData.push(await getJson(genre[i]));
     console.log(allData)
-    return allData
+    
+    
+    const sortedData = []
+    for (let i=0; i < allData.length; i++) 
+        sortedData.push([
+            allData[i].image_url, 
+            allData[i].title,
+            allData[i].genres[0],
+            allData[i].description,
+            allData[i].year,
+            allData[i].votes,
+            allData[i].imdb_score,
+            allData[i].directors[0],
+            allData[i].actors,
+            allData[i].duration,
+            allData[i].countries[0],
+            allData[i].worldwide_gross_incom
+        ])
+    
+    return sortedData
 };
+
+
 
 
 /*
@@ -56,7 +77,7 @@ async function creatElementTest (containerNumber, genreUrl) {
         const containerSelection = document.querySelector(".container" + containerNumber);
         const thumbnailDiv = document.createElement("img");
         thumbnailDiv.classList.add("imgThumbnail");
-        thumbnailDiv.src = data[i].image_url;    
+        thumbnailDiv.src = data[i][0];    
         containerSelection.appendChild(thumbnailDiv);
     };
 
