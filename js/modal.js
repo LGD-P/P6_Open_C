@@ -43,7 +43,7 @@ Array.from(document.querySelectorAll(".container2")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData(sciFyUrl);
+      modalElement = fillModalWithBestMovieData (sciFyUrl);
       
    });
 });

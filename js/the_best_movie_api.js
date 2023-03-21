@@ -121,13 +121,12 @@ const getSynopsis = document.getElementById('Synopsis-R');
 
 
 
-/*
+/*       CHANGER LE NOM DE CETTE FONCTION !!
 * This function will fill best-movie modal with 
 * data if best-movie
 */
 async function fillModalWithBestMovieData (urlToFetch) {
     const reponses = await getBestMovieDataInArray (urlToFetch);
-    console.log(reponses);
     const title = reponses[1];
     getTitle.replaceChildren(title);
     const genre = reponses[2];
@@ -155,5 +154,34 @@ async function fillModalWithBestMovieData (urlToFetch) {
 
 
 
+async function fillModalWithSevenMovies (urlToFetch) {
+    const reponses = await sevenMoviesDatasByGenre(urlToFetch);
+    for (i=0; i< reponses.length; i++){
+        console.log(reponse[i])
+    
+        const title = reponses[i][1]
+        getTitle.replaceChildren(title)
+        const genre = reponses[i][2]
+        getGenre.replaceChildren(genre.join(" - "))
+        const date = reponses[i][4]
+        getDate.replaceChildren(date)
+        const rated = reponses[i][5]
+        getRated.replaceChildren(rated)
+        const score = reponses[i][6]
+        getScore.replaceChildren(score)
+        const maker = reponses[i][7]
+        getMaker.replaceChildren(maker)
+        const actors = reponses[i][8]
+        getActors.replaceChildren(actors.join(" - "))
+        const duration = reponses[i][9]
+        getDuration.replaceChildren(duration,'min')
+        const countries = reponses[i][10]
+        getCountry.replaceChildren(countries)
+        const boxOffice = reponses[i][11]
+        getboxOffice.replaceChildren(boxOffice)
+        const resume = reponses[i][3]
+        getSynopsis.replaceChildren(resume)
+    };
+};
 
 

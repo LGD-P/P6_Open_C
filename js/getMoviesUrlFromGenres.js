@@ -78,15 +78,7 @@ async function creatElementInCaroussel (containerNumber, genreUrl) {
         const thumbnailDiv = document.createElement("img");
         thumbnailDiv.classList.add("imgThumbnail");
         thumbnailDiv.src = data[i][0];    
-        containerSelection.appendChild(thumbnailDiv);
-        
-        await fillModalWithBestMovieData (sciFyUrl);
-        /*await fillModalWithBestMovieData (crimeUrl);
-        await fillModalWithBestMovieData (bestEverUrl);
-        await fillModalWithBestMovieData (historyUrl);
-        */
-        
-        
+        containerSelection.appendChild(thumbnailDiv);    
     };
 
 };
