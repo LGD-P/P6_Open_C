@@ -30,8 +30,8 @@ async function getSevenUrls (genreUrl) {
 
 
 /*
-* This fuynction get in an array
-* All data we need from each 7 movies
+* This function get in an array
+* All sorted data we need from each 7 movies
 */
 
 async function sevenMoviesDatasByGenre (urlCategory) {
@@ -76,11 +76,10 @@ async function creatElementInCaroussel (containerNumber, genreUrl) {
     for (let i =0 ; i< data.length; i ++) {
         const containerSelection = document.querySelector(".container" + containerNumber);
         const thumbnailDiv = document.createElement("img");
-        thumbnailDiv.classList.add("imgThumbnail");
+        thumbnailDiv.classList.add("imgThumb","imgThumbnail"+i);
         thumbnailDiv.src = data[i][0];    
-        containerSelection.appendChild(thumbnailDiv);    
-    };
-
+        containerSelection.appendChild(thumbnailDiv);   
+    }
 };
 
 const categoryBest = creatElementInCaroussel(0,bestEverUrl);

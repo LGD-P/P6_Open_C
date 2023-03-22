@@ -1,7 +1,11 @@
 
 const modal = document.querySelector(".modal");
 const modalImage = document.querySelector(".modalImage");
-const modalElement = document.querySelector(".list")
+const modalElement = document.querySelector(".modal-element .list")
+
+
+
+
 
 
 
@@ -29,12 +33,13 @@ Array.from(document.querySelectorAll(".container0")).forEach(item => {
    });
 });
 
+
 Array.from(document.querySelectorAll(".container1")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData(historyUrl);
-      
+      modalElement = fillModalWithBestMovieData (historyUrl);
+
    });
 });
 
@@ -48,11 +53,12 @@ Array.from(document.querySelectorAll(".container2")).forEach(item => {
    });
 });
 
+
 Array.from(document.querySelectorAll(".container3")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData(crimeUrl);
+      modalElement =  fillModalWithSevenMovies (crimeUrl);
       
    });
 });
