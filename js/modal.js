@@ -27,8 +27,8 @@ Array.from(document.querySelectorAll(".container")).forEach(item => {
 Array.from(document.querySelectorAll(".container0")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
-      modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData(bestEverUrl);
+      const id = event.target.attributes[2].nodeValue;   
+      modalElement = fillModal (id);
       
    });
 });
@@ -37,8 +37,8 @@ Array.from(document.querySelectorAll(".container0")).forEach(item => {
 Array.from(document.querySelectorAll(".container1")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
-      modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData (historyUrl);
+      const id = event.target.attributes[2].nodeValue;   
+      modalElement = fillModal (id);
 
    });
 });
@@ -47,8 +47,8 @@ Array.from(document.querySelectorAll(".container1")).forEach(item => {
 Array.from(document.querySelectorAll(".container2")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
-      modalImage.src = event.target.src;
-      modalElement = fillModalWithBestMovieData (sciFyUrl);
+      const id = event.target.attributes[2].nodeValue;   
+      modalElement = fillModal (id);
       
    });
 });
@@ -58,7 +58,8 @@ Array.from(document.querySelectorAll(".container3")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
       modalImage.src = event.target.src;
-      modalElement =  fillModalWithSevenMovies (crimeUrl);
+      const id = event.target.attributes[2].nodeValue;   
+      modalElement = fillModal (id);
       
    });
 });
@@ -73,7 +74,7 @@ Array.from(document.querySelectorAll(".container3")).forEach(item => {
 document.querySelector(".best-movie-button").addEventListener( "click", () => {
    modal.style.display = "block";
    modalImage.src = document.querySelector("#best-movie").src
-   modalElement = fillModalWithBestMovieData(bestMovieAlone)
+   modalElement = getBestMovieDataInModal(bestMovieAlone)
 });
 
 

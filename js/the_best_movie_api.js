@@ -42,7 +42,7 @@ async function getTheBestMovieData (url) {
     const globalReponse = await getJson (url);
     const detailReponse = await fetchMovie(globalReponse.results[0].id);
     theBestMovieData.push(detailReponse.title, detailReponse.description,detailReponse.image_url);
-    console.log(theBestMovieData)
+    /*console.log(theBestMovieData)*/
     return theBestMovieData
 
 }
@@ -71,31 +71,34 @@ fillDomWithBestMovie(bestMovieAlone,bestMovieImg,bestMovieTitle,bestMovieResume)
 * movie to be displayed in modal
 */
 
-async function getBestMovieDataInArray (urlToFetch){
+async function getBestMovieDataInModal (urlToFetch){
     const globalReponse = await getJson (urlToFetch)
-    const detailReponse = await fetchMovie(globalReponse.results[0].id)
-    const dataArray = [];
-    dataArray.push(
-      detailReponse.image_url,
-      detailReponse.title,
-      detailReponse.genres,
-      detailReponse.description,
-      detailReponse.year,
-      detailReponse.votes,
-      detailReponse.imdb_score,
-      detailReponse.directors[0],
-      detailReponse.actors,
-      detailReponse.duration,
-      detailReponse.countries[0],
-      detailReponse.worldwide_gross_incom
-    );
-    dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
-    /*console.log(dataArray)*/
-    return dataArray;
+    const reponses = await fetchMovie(globalReponse.results[0].id)
+    console.log(reponses)
+    const title = reponses.title;
+    getTitle.replaceChildren(title);
+    const genre = reponses.genres;
+    getGenre.replaceChildren(genre.join(" - "));
+    const date = reponses.year;
+    getDate.replaceChildren(date);
+    const rated = reponses.votes;
+    getRated.replaceChildren(rated);
+    const score = reponses.imdb_score;
+    getScore.replaceChildren(score);
+    const maker = reponses.directors[0];
+    getMaker.replaceChildren(maker);
+    const actors = reponses.actors;
+    getActors.replaceChildren(actors.join(" - "));
+    const duration = reponses.duration;
+    getDuration.replaceChildren(duration,'min');
+    const countries = reponses.countries;
+    getCountry.replaceChildren(countries.join(" - "));
+    const boxOffice = reponses.worldwide_gross_income;
+    getboxOffice.replaceChildren(boxOffice);
+    const resume = reponses.description;
+    getSynopsis.replaceChildren(resume);
+
   };
-
-
-
 
 
 
@@ -114,82 +117,33 @@ const getSynopsis = document.getElementById('Synopsis-R');
 
 
 
-
-/*       CHANGER LE NOM DE CETTE FONCTION !!
-* This function will fill best-movie modal with 
-* data if best-movie
-*/
-async function fillModalWithBestMovieData (urlToFetch) {
-    const reponses = await getBestMovieDataInArray (urlToFetch);
-    const title = reponses[1];
+async function fillModal (id) {
+    
+    const reponses = await fetchMovie(id);
+    /*console.log(reponses)*/
+    
+    const title = reponses.title;
     getTitle.replaceChildren(title);
-    const genre = reponses[2];
+    const genre = reponses.genres;
     getGenre.replaceChildren(genre.join(" - "));
-    const date = reponses[4];
+    const date = reponses.year;
     getDate.replaceChildren(date);
-    const rated = reponses[5];
+    const rated = reponses.votes;
     getRated.replaceChildren(rated);
-    const score = reponses[6];
+    const score = reponses.imdb_score;
     getScore.replaceChildren(score);
-    const maker = reponses[7];
+    const maker = reponses.directors[0];
     getMaker.replaceChildren(maker);
-    const actors = reponses[8];
+    const actors = reponses.actors;
     getActors.replaceChildren(actors.join(" - "));
-    const duration = reponses[9];
+    const duration = reponses.duration;
     getDuration.replaceChildren(duration,'min');
-    const countries = reponses[10];
-    getCountry.replaceChildren(countries);
-    const boxOffice = reponses[11];
+    const countries = reponses.countries;
+    getCountry.replaceChildren(countries.join(" - "));
+    const boxOffice = reponses.worldwide_gross_income;
     getboxOffice.replaceChildren(boxOffice);
-    const resume = reponses[3];
+    const resume = reponses.description;
     getSynopsis.replaceChildren(resume);
-
-};
-
-
-
-async function imgClickedByUser () { document.addEventListener('click',(e) =>{
-    
-    const elementClass = e.target.className;
-    const result = parseInt(elementClass.at(-1));
-    console.log(result);
-    return result;
-    });
-};
-
-
-
-async function fillModalWithSevenMovies (urlToFetch) {
-    
-    const reponses = await sevenMoviesDatasByGenre (urlToFetch);
-    const clickedClass = await imgClickedByUser ();
-    
-    console.log(reponses);
-    console.log(reponses[clickedClass]);
-
-    const title = reponses[clickedClass][1];
-    getTitle.replaceChildren(title);
-    const genre = reponses[clickedClass][2];
-    getGenre.replaceChildren(genre.join(" - "));
-    const date = reponses[clickedClass][4]
-    getDate.replaceChildren(date)
-    const rated = reponses[clickedClass][5]
-    getRated.replaceChildren(rated)
-    const score = reponses[clickedClass][6]
-    getScore.replaceChildren(score)
-    const maker = reponses[clickedClass][7]
-    getMaker.replaceChildren(maker)
-    const actors = reponses[clickedClass][8]
-    getActors.replaceChildren(actors.join(" - "))
-    const duration = reponses[clickedClass][9]
-    getDuration.replaceChildren(duration,'min')
-    const countries = reponses[clickedClass][10]
-    getCountry.replaceChildren(countries)
-    const boxOffice = reponses[clickedClass][11]
-    getboxOffice.replaceChildren(boxOffice)
-    const resume = reponses[clickedClass][3]
-    getSynopsis.replaceChildren(resume)
-              
 
 };
 

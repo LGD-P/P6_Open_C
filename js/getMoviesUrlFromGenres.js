@@ -48,6 +48,7 @@ async function sevenMoviesDatasByGenre (urlCategory) {
     for (let i=0; i < allData.length; i++) 
         sortedData.push([
             allData[i].image_url, 
+            /*
             allData[i].title,
             allData[i].genres[0],
             allData[i].description,
@@ -59,6 +60,7 @@ async function sevenMoviesDatasByGenre (urlCategory) {
             allData[i].duration,
             allData[i].countries[0],
             allData[i].worldwide_gross_incom,
+            */
             allData[i].id
         ])
     /*console.log(sortedData)*/
@@ -81,6 +83,7 @@ async function creatElementInCaroussel (containerNumber, genreUrl) {
         const thumbnailDiv = document.createElement("img");
         thumbnailDiv.classList.add("imgThumb","imgThumbnail"+i);
         thumbnailDiv.src = data[i][0];    
+        thumbnailDiv.setAttribute('data-id', data[i][1])
         containerSelection.appendChild(thumbnailDiv);   
         /* faire un set attribut avec l'id du film et ensuite */
   
