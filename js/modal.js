@@ -27,6 +27,7 @@ Array.from(document.querySelectorAll(".container")).forEach(item => {
 Array.from(document.querySelectorAll(".container0")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
+      modalImage.src = event.target.src;
       const id = event.target.attributes[2].nodeValue;   
       modalElement = fillModal (id);
       
@@ -37,6 +38,7 @@ Array.from(document.querySelectorAll(".container0")).forEach(item => {
 Array.from(document.querySelectorAll(".container1")).forEach(item => {
    item.addEventListener("click", event => {
       modal.style.display = "block";
+      modalImage.src = event.target.src;
       const id = event.target.attributes[2].nodeValue;   
       modalElement = fillModal (id);
 

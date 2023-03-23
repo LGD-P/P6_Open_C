@@ -94,7 +94,12 @@ async function getBestMovieDataInModal (urlToFetch){
     const countries = reponses.countries;
     getCountry.replaceChildren(countries.join(" - "));
     const boxOffice = reponses.worldwide_gross_income;
-    getboxOffice.replaceChildren(boxOffice);
+    if (boxOffice === null) {
+        getboxOffice.replaceChildren("Pas d'information");
+    } else {
+        getboxOffice.replaceChildren(boxOffice);
+    };
+
     const resume = reponses.description;
     getSynopsis.replaceChildren(resume);
 

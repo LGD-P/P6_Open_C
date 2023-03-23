@@ -83,7 +83,8 @@ async function creatElementInCaroussel (containerNumber, genreUrl) {
         const thumbnailDiv = document.createElement("img");
         thumbnailDiv.classList.add("imgThumb","imgThumbnail"+i);
         thumbnailDiv.src = data[i][0];    
-        thumbnailDiv.setAttribute('data-id', data[i][1])
+        thumbnailDiv.setAttribute('data-id', data[i][1]);
+        thumbnailDiv.setAttribute('alt', data[i][1])
         containerSelection.appendChild(thumbnailDiv);   
         /* faire un set attribut avec l'id du film et ensuite */
   
