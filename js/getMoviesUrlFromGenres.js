@@ -5,6 +5,10 @@ const crimeUrl = "http://localhost:8000/api/v1/titles/?genre=Crime&sort_by=-imdb
 
 
 
+
+
+
+
 /*
 * This function check genre pages 
 * to get 7 movies url in an array
@@ -39,8 +43,6 @@ async function sevenMoviesDatasByGenre (urlCategory) {
     const genre = await  getSevenUrls (urlCategory);
     for (let i =0 ; i< genre.length; i ++)
         allData.push(await getJson(genre[i]));
-    /*console.log(allData)*/
-    
     
     const sortedData = []
     for (let i=0; i < allData.length; i++) 
@@ -56,9 +58,10 @@ async function sevenMoviesDatasByGenre (urlCategory) {
             allData[i].actors,
             allData[i].duration,
             allData[i].countries[0],
-            allData[i].worldwide_gross_incom
+            allData[i].worldwide_gross_incom,
+            allData[i].id
         ])
-    
+    /*console.log(sortedData)*/
     return sortedData
 };
 
@@ -79,6 +82,8 @@ async function creatElementInCaroussel (containerNumber, genreUrl) {
         thumbnailDiv.classList.add("imgThumb","imgThumbnail"+i);
         thumbnailDiv.src = data[i][0];    
         containerSelection.appendChild(thumbnailDiv);   
+        /* faire un set attribut avec l'id du film et ensuite */
+  
     }
 };
 

@@ -1,10 +1,9 @@
 
 const bestMovieAlone = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
-const img = document.querySelector(".best-movie-img")
-const title = document.querySelector(".best-movie-title")
-
-
+const bestMovieImg = document.querySelector(".best-movie-img");
+const bestMovieTitle = document.querySelector(".best-movie-title");
+const bestMovieResume = document.querySelector(".best-movie-remuse");
 
 
 
@@ -21,39 +20,50 @@ async function getJson (url) {
 
 
 
-async function displayBestMovieImg (img) {
-    const json = await getJson(bestMovieAlone);
-    const data =  json.results[0].image_url ;
-    return img.src = data;
-};
 
-displayBestMovieImg (img);
+/*
+* This function fech a movie  whit ID to get json data back
+*/
+async function fetchMovie (idOrOther){
+    const reponse = await fetch("http://localhost:8000/api/v1/titles/"+idOrOther);
+    const json = await reponse.json();
+    /*console.log(json)*/
+    return json
+}
 
 
 /*
-*This function put best movie title in main page 
+* This function use global search to get best movie
+* then get info we need in array to display in DOM
 */
 
-async function displayBestMovieTitle (title) {
-    const json = await getJson(bestMovieAlone);
-    const data = json.results[0].title;
-    return title.replaceChildren(data);
-};
+async function getTheBestMovieData (url) {
+    const theBestMovieData = [];
+    const globalReponse = await getJson (url);
+    const detailReponse = await fetchMovie(globalReponse.results[0].id);
+    theBestMovieData.push(detailReponse.title, detailReponse.description,detailReponse.image_url);
+    console.log(theBestMovieData)
+    return theBestMovieData
 
-displayBestMovieTitle(title);
-
-
+}
 
 /*
-* This function get only the best movie url
+* This function displaye data for best movie in DOM
 */
 
-async function getBestMovieUrl (urlToFetch) {
-    const json = await getJson(urlToFetch);
-    const url = json.results[0].url;
-    return url;
-    
-};
+async function fillDomWithBestMovie (url, img, title, resume) {
+    const bestMovieData = await getTheBestMovieData(url);
+    title.replaceChildren(bestMovieData[0]);
+    resume.replaceChildren(bestMovieData[1]);
+    img.src = bestMovieData[2];
+
+}
+
+fillDomWithBestMovie(bestMovieAlone,bestMovieImg,bestMovieTitle,bestMovieResume);
+
+
+
+
 
 
 /*
@@ -62,23 +72,22 @@ async function getBestMovieUrl (urlToFetch) {
 */
 
 async function getBestMovieDataInArray (urlToFetch){
-    const url = await getBestMovieUrl (urlToFetch);
-    const fetchUrl = await fetch(url);
-    const toJson = await fetchUrl.json();
+    const globalReponse = await getJson (urlToFetch)
+    const detailReponse = await fetchMovie(globalReponse.results[0].id)
     const dataArray = [];
     dataArray.push(
-      toJson.image_url,
-      toJson.title,
-      toJson.genres,
-      toJson.description,
-      toJson.year,
-      toJson.votes,
-      toJson.imdb_score,
-      toJson.directors[0],
-      toJson.actors,
-      toJson.duration,
-      toJson.countries[0],
-      toJson.worldwide_gross_incom
+      detailReponse.image_url,
+      detailReponse.title,
+      detailReponse.genres,
+      detailReponse.description,
+      detailReponse.year,
+      detailReponse.votes,
+      detailReponse.imdb_score,
+      detailReponse.directors[0],
+      detailReponse.actors,
+      detailReponse.duration,
+      detailReponse.countries[0],
+      detailReponse.worldwide_gross_incom
     );
     dataArray.splice(dataArray.indexOf("undefined"), 1, "Pas d'information");
     /*console.log(dataArray)*/
@@ -86,21 +95,6 @@ async function getBestMovieDataInArray (urlToFetch){
   };
 
 
-  const bestMovieResume = document.querySelector(".best-movie-remuse")
-
-
-/*
-*This function put best movie resume in main page 
-*/
-
-async function displayBestMovieResume (resume) {
-    const reponse = await getBestMovieDataInArray (bestMovieAlone);
-    const answer = reponse[3];
-    resume.replaceChildren(answer);
-};
-
-
-displayBestMovieResume(bestMovieResume);
 
 
 
@@ -155,10 +149,11 @@ async function fillModalWithBestMovieData (urlToFetch) {
 
 
 async function imgClickedByUser () { document.addEventListener('click',(e) =>{
+    
     const elementClass = e.target.className;
-    const result = parseInt(elementClass.at(-1))
-    console.log(result)
-    return result
+    const result = parseInt(elementClass.at(-1));
+    console.log(result);
+    return result;
     });
 };
 
@@ -172,10 +167,10 @@ async function fillModalWithSevenMovies (urlToFetch) {
     console.log(reponses);
     console.log(reponses[clickedClass]);
 
-    const title = reponses[clickedClass][1]
-    getTitle.replaceChildren(title)
-    const genre = reponses[clickedClass][2]
-    getGenre.replaceChildren(genre.join(" - "))
+    const title = reponses[clickedClass][1];
+    getTitle.replaceChildren(title);
+    const genre = reponses[clickedClass][2];
+    getGenre.replaceChildren(genre.join(" - "));
     const date = reponses[clickedClass][4]
     getDate.replaceChildren(date)
     const rated = reponses[clickedClass][5]
