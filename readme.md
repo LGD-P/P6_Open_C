@@ -1,13 +1,11 @@
-
-<img  width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" />     <img  width="60" height="60"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" />     <img  width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-          
+![preview](logo/preview.gif)
 
 # Projet 6 Just Stream It: 
 
 *Le but de ce projet est de créer un site web capable 
 de communiquer avec une API en utilisant HTML CSS et Vanilla Javascript*
 
-<img align="left" width="150" height="100" src="logo/image.png">**Le scénario est celui d'une association qui souhaite proposer une service pour accéder aux informations des méilleurs films du moment. L'interface sera inspirée de Netflix.**
+<img align="left" width="150" height="100" src="logo/image.png">**Le scénario est celui d'une association qui souhaite proposer une service pour accéder aux informations des méilleurs films du moment.**
 
 
 
@@ -76,4 +74,7 @@ Il n'y a plus qu'à lancer le fichier index.html dans votre navigateur.
 
 
 
-![preview](logo/preview.gif)
+
+
+<img  width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" />     <img  width="60" height="60"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" />     <img  width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+          
