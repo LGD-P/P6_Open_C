@@ -1,15 +1,15 @@
-![preview](logo/preview.gif)
+![](logo/preview.gif)
 
 # Projet 6 Just Stream It: 
 
 *Le but de ce projet est de créer un site web capable 
 de communiquer avec une API en utilisant HTML CSS et Vanilla Javascript*
 
-<img align="left" width="150" height="100" src="logo/image.png">**Le scénario est celui d'une association qui souhaite proposer une service pour accéder aux informations des méilleurs films du moment.**
+<img align="left" width="150" height="100" src="logo/image.png">**Le scénario est celui d'une association qui souhaite proposer un service pour accéder aux informations des méilleurs films du moment.**
 
 
 
-**L’interface doit comprendre les 5 zones sous le header :** 
+**L’interface doit comprendre 5 zones sous le header :** 
 
     • “Meilleur film” : Cette zone affiche la photo du film qui a la meilleur note Imdb toutes catégories confondues, ainsi que son titre, un bouton et le résumé du film sous le bouton. 
 
@@ -73,8 +73,3 @@ A la racine du projet cloner le front avec la commande:
 Il n'y a plus qu'à lancer le fichier index.html dans votre navigateur.
 
 
-
-
-
-<img  width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" />     <img  width="60" height="60"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" />     <img  width="50" height="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-          
