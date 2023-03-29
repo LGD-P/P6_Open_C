@@ -13,7 +13,7 @@ de communiquer avec une API en utilisant HTML CSS et Vanilla Javascript*
 
     • “Meilleur film” : Cette zone affiche la photo du film qui a la meilleur note Imdb toutes catégories confondues, ainsi que son titre, un bouton et le résumé du film sous le bouton. 
 
-    • “Films les mieux notés” : Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir. 
+    • “Films les mieux notés” : Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite. 
 
     • “Catégorie 1” : Montre les 7 films les mieux notés d’une catégorie donnée.  
 
@@ -45,13 +45,13 @@ au clic de l'utilisateur, sur les vignettes présentes dans les caroussels, elle
     
 Cloner le dépôt de code à l'aide de la commande :
 
-    git clone clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
+    git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
     
 *(vous pouvez également télécharger le code en temps qu'archive zip)*
 
 Rendez-vous depuis un terminal à la racine du répertoire ocmovies-api-fr avec la commande :
         
-    cd ocmovies-api-fr
+    cd OCMovies-API-EN-FR-master
 
 Installez les dépendances du projet à l'aide de la commande : 
 
