@@ -45,31 +45,40 @@ au clic de l'utilisateur, sur les vignettes présentes dans les caroussels, elle
     
 Cloner le dépôt de code à l'aide de la commande :
 
-    git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
-    
+```bash
+git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
+```    
 *(vous pouvez également télécharger le code en temps qu'archive zip)*
 
 Rendez-vous depuis un terminal à la racine du répertoire ocmovies-api-fr avec la commande :
-        
-    cd OCMovies-API-EN-FR-master
+
+```bash
+cd OCMovies-API-EN-FR-master
+```
 
 Installez les dépendances du projet à l'aide de la commande : 
 
-    pipenv install
+```bash
+pipenv install
+```
     
 Créer et alimenter la base de données à l'aide de la commande 
 
-    pipenv run python manage.py create_db
-
+```bash
+pipenv run python manage.py create_db
+```
 Démarrer le serveur avec :
-    
-    pipenv run python manage.py runserver
+
+```bash
+pipenv run python manage.py runserver
+```
 
 
 A la racine du projet cloner le front avec la commande:
 
-    git clone https://github.com/LGD-P
-
+```bash
+git clone https://github.com/LGD-P
+```
 Il n'y a plus qu'à lancer le fichier index.html dans votre navigateur.
 
 
